@@ -509,7 +509,7 @@ void CFamiTrackerApp::RegisterSingleInstance()
 		LPTSTR pBuf = (LPTSTR) MapViewOfFile(m_hWndMapFile, FILE_MAP_ALL_ACCESS, 0, 0, SHARED_MEM_SIZE);
 		if (pBuf != NULL) { 
 			// Create a string of main window handle
-			_itot_s((int)GetMainWnd()->m_hWnd, pBuf, SHARED_MEM_SIZE, 10);
+			_itot_s((size_t)GetMainWnd()->m_hWnd, pBuf, SHARED_MEM_SIZE, 10);
 			UnmapViewOfFile(pBuf);
 		}
 	}
@@ -645,7 +645,7 @@ bool CFamiTrackerApp::CheckSingleInstance(CFTCommandLineInfo &cmdInfo)
 					data.dwData = cmdInfo.m_bPlay ? IPC_LOAD_PLAY : IPC_LOAD;
 					data.cbData = (DWORD)((_tcslen(pFilePath) + 1) * sizeof(TCHAR));
 					data.lpData = pFilePath;
-					DWORD result;
+					DWORD_PTR result;
 					SendMessageTimeout(hWnd, WM_COPYDATA, NULL, (LPARAM)&data, SMTO_NORMAL, 100, &result);
 					UnmapViewOfFile(pBuf);
 					CloseHandle(hMapFile);

@@ -67,7 +67,7 @@ BOOL CPerformanceDlg::OnInitDialog()
 	// EXCEPTION: OCX Property Pages should return FALSE
 }
 
-void CPerformanceDlg::OnTimer(UINT nIDEvent)
+void CPerformanceDlg::OnTimer(UINT_PTR nIDEvent)
 {
 	CProgressCtrl *pBar = static_cast<CProgressCtrl*>(GetDlgItem(IDC_CPU_BAR));
 	unsigned int Usage = theApp.GetCPUUsage();

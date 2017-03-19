@@ -34,7 +34,7 @@ CBookmarkCollection::CBookmarkCollection()
 {
 }
 
-unsigned CBookmarkCollection::GetCount() const
+size_t CBookmarkCollection::GetCount() const
 {
 	return m_pBookmark.size();
 }
@@ -117,7 +117,7 @@ void CBookmarkCollection::SwapFrames(unsigned A, unsigned B)
 int CBookmarkCollection::GetBookmarkIndex(const CBookmark *const pMark) const
 {
 	if (unsigned Count = GetCount())
-		for (size_t i = 0; i < Count; ++i)
+		for (int i = 0; i < Count; ++i)
 			if (m_pBookmark[i].get() == pMark)
 				return i;
 	return -1;

@@ -37,7 +37,7 @@ public:
 	/*!	\brief Gets the number of bookmarks in the collection.
 		\return The number of bookmarks stored.
 	*/
-	unsigned GetCount() const;
+	size_t GetCount() const;
 	/*!	\brief Obtains a bookmark at a given position.
 		\details The bookmark is owned by the collection. The bookmark shall not be deallocated via
 		the returned pointer.

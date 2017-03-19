@@ -63,7 +63,7 @@ unsigned int CDSampleManager::GetSampleCount() const
 
 unsigned int CDSampleManager::GetFirstFree() const
 {
-	for (size_t i = 0; i < MAX_DSAMPLES; ++i)
+	for (unsigned int i = 0; i < MAX_DSAMPLES; ++i)
 		if (!m_pDSample[i])
 			return i;
 	return -1;
