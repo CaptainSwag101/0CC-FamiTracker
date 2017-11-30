@@ -24,6 +24,7 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 
 // Instrument types
 enum inst_type_t {
@@ -51,7 +52,7 @@ public:
 	void SetName(std::string_view Name);		// // //
 	std::string_view GetName() const;		// // //
 	void RegisterManager(CInstrumentManagerInterface *pManager);		// // //
-	virtual void OnBlankInstrument();										// // // Setup some initial values
+	virtual void OnBlankInstrument();									// // // Setup some initial values
 
 	void SaveFTI(CSimpleFile &File) const;								// // // Saves to an FTI file
 
